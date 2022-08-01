@@ -102,3 +102,4 @@ class Card(models.Model):
     wallet=models.ForeignKey('Wallet', on_delete=models.CASCADE,related_name='Card_wallet')
     account=models.ForeignKey('Account', on_delete=models.CASCADE,related_name='Card_account')
     issuer =models.CharField(max_length=20,null=True)
+Footer
