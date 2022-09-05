@@ -1,13 +1,13 @@
-from datetime import date
-from pyexpat import model
+from email.policy import default
 from django.db import models
 from django.utils import timezone
 # Create your models here.
+
 class Customer(models.Model):
     first_name=models.CharField(max_length=20,null=True)
     last_name=models.CharField(max_length=20,null=True)
-    address=models.TextField(null=True)
-    email=models.EmailField(null=True)
+    address=models.TextField()
+    email=models.EmailField()
     phone_number=models.CharField(max_length=15,null=True)
     gender_choices=(
         ('M','male'),
@@ -44,7 +44,7 @@ class Transaction(models.Model):
     transaction_charge=models.IntegerField()
     origin_account=models.ForeignKey('Account', on_delete=models.CASCADE,related_name='Transaction_origin_account')
     destination_account=models.ForeignKey('Customer', on_delete=models.CASCADE,related_name='Transaction_destination_account')
-    date_and_time=models.DateTimeField()
+    date_and_time=models.DateTimeField(default=timezone.now)
     receipt=models.ForeignKey('Customer', on_delete=models.CASCADE,related_name='Transaction_receipt')    
 
 class Receipt(models.Model):
@@ -72,7 +72,7 @@ class Loan(models.Model):
 
 class Reward(models.Model):
     name=models.CharField(max_length=20,null=True)
-    customer_id=models.IntegerField(max_length=10,null=True)  
+    customer_id=models.IntegerField()  
     receipt=models.ForeignKey('Customer', on_delete=models.CASCADE,related_name='Reward_receipt')
     transaction=models.ForeignKey('Account', on_delete=models.CASCADE,related_name='Reward_transaction')
     date_and_time=models.DateTimeField(default=timezone.now)
@@ -83,7 +83,7 @@ class Notification(models.Model):
     title=models.CharField(max_length=20,null=True)
     status=models.CharField(max_length=20,null=True)
     recipient=models.ForeignKey('Customer', on_delete=models.CASCADE,related_name='Notification_recipient') 
-    data_and_time=models.DateTimeField() 
+    data_and_time=models.DateTimeField(default=timezone.now) 
 
 class ThirdParty(models.Model):
     account=models.ForeignKey('Account', on_delete=models.CASCADE,related_name='ThirdParty_account')
@@ -93,7 +93,7 @@ class ThirdParty(models.Model):
     location=models.ForeignKey('Customer', on_delete=models.CASCADE,related_name='ThirdPsrty_location')
     
 class Card(models.Model):
-    card_number=models.IntegerField(max_length=15,null=True)
+    card_number=models.IntegerField()
     Card_name=models.CharField(max_length=20,null=True)
     Expiry_date=models.DateTimeField(default=timezone.now)
     Date_issued=models.DateTimeField(default=timezone.now)
@@ -102,4 +102,3 @@ class Card(models.Model):
     wallet=models.ForeignKey('Wallet', on_delete=models.CASCADE,related_name='Card_wallet')
     account=models.ForeignKey('Account', on_delete=models.CASCADE,related_name='Card_account')
     issuer =models.CharField(max_length=20,null=True)
-Footer

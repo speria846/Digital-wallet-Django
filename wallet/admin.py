@@ -12,8 +12,8 @@ from .models import Card
 
 # Register your models here.
 class CustomerAdmin(admin.ModelAdmin):
-    list_display=('first_name','last_name','email')
-    search_fields=('first_name','last_name')
+    list_display=('first_name','last_name','address','email','phone_number','gender','age','nationality')
+    search_fields=('first_name','last_name','address','email','phone_number','gender','age','nationality')
 admin.site.register(Customer,CustomerAdmin)
 admin.site.register(Wallet)
 admin.site.register(Account)
