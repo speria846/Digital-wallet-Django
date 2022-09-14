@@ -1,0 +1,14 @@
+<table>
+    <th>
+    <td>wallet</td>
+    <td>Transaction_charge</td>
+    <td>Date_and_Time</td>
+    </th>
+    {% for Transaction in transaction %}
+    <tr>
+        <td>{{transaction.wallet}}</td>
+        <td>{{transaction.date_and_time}}</td>
+        <td>{{transaction.Transaction_charge}}</td>
+    </tr>
+    {% endfor %}
+</table>

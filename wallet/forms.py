@@ -7,6 +7,7 @@ class CustomerRegistrationForm(forms.ModelForm):
         model = Customer
         fields = "__all__"
 
+
 class WalletRegistrationForm(forms.ModelForm):
     class Meta:
         model = Wallet

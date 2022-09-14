@@ -1,0 +1,14 @@
+<table>
+    <th>
+    <td>message</td>
+    <td> status</td>
+    <td>interest_rate</td>
+    </th>
+    {% for Notification in notification %}
+    <tr>
+        <td>{{notification.message}}</td>
+        <td>{{notification.status}</td>
+        <td>{{notification.recipient}}</td>
+    </tr>
+    {% endfor %}
+</table>

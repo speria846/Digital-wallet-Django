@@ -1,0 +1,14 @@
+<table>
+    <th>
+    <td>name</td>
+    <td>amount</td>
+    <td>currency</td>
+    </th>
+    {% for ThirdParty in thirdparty %}
+    <tr>
+        <td>{{thirdparty.name}}</td>
+        <td>{{thirdparty.amount}</td>
+        <td>{{thirdparty.currency}}</td>
+    </tr>
+    {% endfor %}
+</table>

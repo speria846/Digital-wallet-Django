@@ -1,0 +1,14 @@
+<table>
+    <th>
+    <td>loan_id_number</td>
+    <td> amount</td>
+    <td>interest_rate</td>
+    </th>
+    {% for Loan in loan %}
+    <tr>
+        <td>{{loan.loan_id_number}}</td>
+        <td>{{loan.amount}</td>
+        <td>{{loan.interest_rate}}</td>
+    </tr>
+    {% endfor %}
+</table>

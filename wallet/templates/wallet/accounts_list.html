@@ -1,0 +1,14 @@
+<table>
+    <th>
+    <td>Firstname</td>
+    <td>Lastname</td>
+    <td>Number</td>
+    </th>
+    {% for Account in account %}
+    <tr>
+        <td>{{account.first_name}}</td>
+        <td>{{account.lastname}}</td>
+        <td>{{account.number}}</td>
+    </tr>
+    {% endfor %}
+</table>
