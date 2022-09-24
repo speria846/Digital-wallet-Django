@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,15 +13,15 @@
     <table class= "table" style="width: 40rem;">
         <table>
             
-            <td>Account_number</td>
-            <td>Account_name</td>
-            <td>Customer</td>
+            <td>Card_number</td>
+            <td>Card_name</td>
+            <td>Date_issued</td>
             </th>
-            {% for Account in accounts %}
+            {% for Card in cards %}
             <tr>
-                <td>{{Account.account_number}}</td>
-                <td>{{Account.account_name}}</td>
-                <td>{{Account.customer}}</td>
+                <td>{{Card.card_number}}</td>
+                <td>{{Card.Card_name}</td>
+                <td>{{Card.Date_issued}}</td>
             </tr>
             {% endfor %}
         </table>
