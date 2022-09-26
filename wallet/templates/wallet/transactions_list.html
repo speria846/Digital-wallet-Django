@@ -1,14 +1,20 @@
 <table>
-    <th>
+    <td>transaction_ref</td>
     <td>wallet</td>
-    <td>Transaction_charge</td>
     <td>Date_and_Time</td>
-    </th>
-    {% for Transaction in transaction %}
+    <td>Transaction_amount</td>
+    <td>Transaction_charge</td>
+    <td>Receipt</td>
+    
+    
+    {% for Transaction in transactions %}
     <tr>
-        <td>{{transaction.wallet}}</td>
-        <td>{{transaction.date_and_time}}</td>
-        <td>{{transaction.Transaction_charge}}</td>
+        <td>{{Transaction.transaction_ref}}</td>
+        <td>{{Transaction.wallet}}</td>
+        <td>{{Transaction.date_and_time}}</td>
+        <td>{{Transaction.transaction_amount}}</td>
+        <td>{{Transaction.transaction_charge}}</td>
+        <td>{{Transaction.receipt}</td>
     </tr>
     {% endfor %}
 </table>

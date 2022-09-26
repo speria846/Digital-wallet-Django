@@ -1,0 +1,20 @@
+<table>
+    
+    <td>Receipt_choices</td>    
+    <td>Receipt_type</td>
+    <td>Receipt_date</td>
+    <td>Amount</td>
+    <td>Transaction</td>
+    
+    </th>
+    {% for Receipt in receipts %}
+    <tr>
+        <td>{{Receipt.receipt_choices}}</td>
+        <td>{{Receipt.receipt_type}}</td>
+        <td>{{Receipt.receipt_date}</td>
+        <td>{{Receipt.amount}}</td>
+        <td>{{Receipt.transaction}</td>
+        
+    </tr>
+    {% endfor %}
+</table>

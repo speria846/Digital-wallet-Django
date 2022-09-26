@@ -1,14 +1,24 @@
 <table>
     
     <td>Firstname</td>
+    <td>last_name</td>
     <td>Age</td>
     <td>Email</td>
+    <td>phone_number</td>
+    <td>Gender</td>
+    <td>Nationality</td>
+    <td>Date_of_registration</td>
     </th>
     {% for Customer in customers %}
     <tr>
-        <td>{{customer.first_name}}</td>
-        <td>{{customer.age}}</td>
-        <td>{{customer.email}}</td>
+        <td>{{Customer.first_name}}</td>
+        <td>{{Customer.last_name}}</td>
+        <td>{{Customer.age}}</td>
+        <td>{{Customer.email}}</td>
+        <td>{{Customer.phone_number}}</td>
+        <td>{{Customer.gender}}</td>
+        <td>{{Customer.nationality}}</td>
+        <td>{{Customer.date_of_registration}}</td>
     </tr>
     {% endfor %}
 </table>
