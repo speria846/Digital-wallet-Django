@@ -89,6 +89,11 @@ def register_loan(request):
             form=LoanRegistrationForm()
     return render(request,"wallet/register_loan.html",{'form':form}) 
 
+def list_loans(request):
+    loans= Loan.objects.all()
+    return render(request,"wallet/loans_list.html",{"loans":loans})  
+
+
 def register_reward(request):
     form = RewardRegistrationForm()
     if request.method =="POST":
@@ -133,9 +138,6 @@ def list_cards(request):
     cards= Card.objects.all()
     return render(request,"wallet/cards_list.html",{"cards":cards})  
 
-def list_loans(request):
-    loans= Loan.objects.all()
-    return render(request,"wallet/loans_list.html",{"Loan":loans})  
 
 def list_rewards(request):
     rewards= Reward.objects.all()

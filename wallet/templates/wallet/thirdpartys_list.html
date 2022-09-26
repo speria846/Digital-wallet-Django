@@ -1,14 +1,17 @@
 <table>
     <th>
-    <td>name</td>
-    <td>amount</td>
-    <td>currency</td>
+    <td>Name</td>
+    <td>Expiry_date</td>
+    <td>Currency</td>
+    <td>Issuer</td>
+    
     </th>
-    {% for ThirdParty in thirdparty %}
+    {% for ThirdParty in thirdpartys %}
     <tr>
-        <td>{{thirdparty.name}}</td>
-        <td>{{thirdparty.amount}</td>
-        <td>{{thirdparty.currency}}</td>
+        <td>{{Thirdparty.name}}</td>
+        <td>{{Thirdparty.expiry_date}</td>
+        <td>{{Thirdparty.currency}}</td>
+        <td>{{Thirdparty.issuer}}</td>
     </tr>
     {% endfor %}
 </table>

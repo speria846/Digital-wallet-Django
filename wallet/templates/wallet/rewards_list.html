@@ -1,14 +1,19 @@
 <table>
-    <th>
-    <td>customer_id</td>
-    <td>receipt</td>
-    <td>points</td>
+    
+    <td>Name</td>
+    <td>Customer_id</td>
+    <td>Receipt</td>
+    <td>Points</td>
+    <td>date_and_time</td>
+    
     </th>
-    {% for Reward in reward %}
+    {% for Reward in rewards %}
     <tr>
-        <td>{{reward.customer_id}}</td>
-        <td>{{reward.rreceipt}</td>
-        <td>{{reward.points}}</td>
+        <td>{{Reward.name}</td>
+        <td>{{Reward.customer_id}}</td>
+        <td>{{Reward.rreceipt}</td>
+        <td>{{Reward.points}}</td>
+        <td>{{Reward.date_and_time}}</td>
     </tr>
     {% endfor %}
 </table>

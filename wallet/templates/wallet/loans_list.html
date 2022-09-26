@@ -1,14 +1,18 @@
 <table>
-    <th>
+    
     <td>loan_id_number</td>
     <td> amount</td>
     <td>interest_rate</td>
+    <td>payment_due_date</td>
+    <td>loan_balance</td>
     </th>
-    {% for Loan in loan %}
+    {% for Loan in loans %}
     <tr>
-        <td>{{loan.loan_id_number}}</td>
-        <td>{{loan.amount}</td>
-        <td>{{loan.interest_rate}}</td>
+        <td>{{Loan.loan_id_number}}</td>
+        <td>{{Loan.amount}</td>
+        <td>{{Loan.interest_rate}}</td>
+        <td>{{Loan.payment_due_date}}</td>
+        <td>{{Loan.loan_balance}}</td>
     </tr>
     {% endfor %}
 </table>
