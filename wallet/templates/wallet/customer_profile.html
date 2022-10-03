@@ -1,0 +1,4 @@
+<h1>{{customer.first_name}} {{customer.last_name}}</h1>
+<a href="{% url 'edit_profile' id=customer.id %}">Edit Profile</a>
+<h2> Gender: {{customer.gender}}</h2>
+<h5>{{customer.address}}</h5>

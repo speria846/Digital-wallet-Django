@@ -2,23 +2,14 @@
     
     <td>Firstname</td>
     <td>last_name</td>
-    <td>Age</td>
-    <td>Email</td>
-    <td>phone_number</td>
-    <td>Gender</td>
-    <td>Nationality</td>
-    <td>Date_of_registration</td>
+    <td>profile</td>
     </th>
     {% for Customer in customers %}
     <tr>
-        <td>{{Customer.first_name}}</td>
-        <td>{{Customer.last_name}}</td>
-        <td>{{Customer.age}}</td>
-        <td>{{Customer.email}}</td>
-        <td>{{Customer.phone_number}}</td>
-        <td>{{Customer.gender}}</td>
-        <td>{{Customer.nationality}}</td>
-        <td>{{Customer.date_of_registration}}</td>
+    <td>{{Customer.first_name}}</td>
+    <td>{{Customer.last_name}}</td>
+    <td><a href="{% url 'customer_profile'}" id=customer.id%> view profile</td>
+
     </tr>
-    {% endfor %}
+        {% endfor %}
 </table>
